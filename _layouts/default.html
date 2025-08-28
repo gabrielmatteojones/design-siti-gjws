@@ -1,51 +1,76 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .nav-link {
+      font-size: 1.1rem;
+      padding: 0.75rem 1rem;
+    }
+  </style>
+</head>
+<body>
+<div class="bg-dark text-white py-3">
+    <div class="container">
+      <strong>Sito gestito dal <b> Dipartimento di esempio </b> di Jonez</strong>
+    </div>
+</div>
 
-    {% include meta.html %}
-
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
-
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
+  <nav class="navbar navbar-expand-lg py-3">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+          <img src="https://gabrieljones.it/assets/logo.png" alt="Logo" class="icon" width="91" height="93">{{ site.title }}</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://gabrieljones.it/tag/">Trasparenza</a>
+          </li>
+        </ul>
       </div>
     </div>
+  </nav>
+<div class="container d-flex justify-content-between align-items-center">
 
-    <div id="main" role="main" class="container">
-      {{ content }}
-    </div>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
+  <!-- Emoji utente -->
+  <a href="/login/?{{ site.title }}" class="btn btn-outline-primary">
+    👤
+  </a>
+</div>
+
+<div class="bg-light py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Testo Hero -->
+      <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+        <h1 class="display-4 fw-bold">{{ page.title }}</h1>
+        <p class="lead">{{ page.descrizione }}</p>
+        <a href="#main" class="btn btn-primary btn-lg">Scopri</a>
+      </div>
+      <!-- Immagine Hero -->
+      <div class="col-lg-6 text-center">
+        <img src="https://i.ytimg.com/vi/lQul_O6R-qM/maxresdefault.jpg" 
+             alt="Hero Image" class="img-fluid rounded">
       </div>
     </div>
+  </div>
+</div>
 
-    {% include analytics.html %}
-  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
