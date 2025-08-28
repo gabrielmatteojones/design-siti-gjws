@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .nav-link {
+      font-size: 1.1rem;
+      padding: 0.75rem 1rem;
+    }
+  </style>
+</head>
+<body>
+<div class="bg-dark text-white py-3">
+    <div class="container">
+      <strong>Sito gestito dal <b> Dipartimento di esempio </b> di Jonez</strong>
+    </div>
+</div>
+
+  <nav class="navbar navbar-expand-lg py-3">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+          <img src="https://gabrieljones.it/assets/logo.png" alt="Logo" class="icon" width="91" height="93">{{ site.title }}</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://gabrieljones.it/tag/">Trasparenza</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<div class="container d-flex justify-content-between align-items-center">
+
+
+  <!-- Emoji utente -->
+  <a href="/login/?{{ site.title }}" class="btn btn-outline-primary">
+    👤
+  </a>
+</div>
+
+<div class="bg-light py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Testo Hero -->
+      <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+        <h1 class="display-4 fw-bold">{{ page.title }}</h1>
+        <p class="lead">{{ page.descrizione }}</p>
+        <a href="#main" class="btn btn-primary btn-lg">Scopri</a>
+      </div>
+      <!-- Immagine Hero -->
+      <div class="col-lg-6 text-center">
+        <img src="https://i.ytimg.com/vi/lQul_O6R-qM/maxresdefault.jpg" 
+             alt="Hero Image" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
